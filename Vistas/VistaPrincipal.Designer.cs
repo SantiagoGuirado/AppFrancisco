@@ -86,6 +86,7 @@ namespace AppFrancisco
             this.menuVerMarcasTelefonos.Name = "menuVerMarcasTelefonos";
             this.menuVerMarcasTelefonos.Size = new System.Drawing.Size(189, 22);
             this.menuVerMarcasTelefonos.Text = "Marcas de Telefonos";
+            this.menuVerMarcasTelefonos.Click += new System.EventHandler(this.menuVerMarcasTelefonos_Click);
             // 
             // menuVerModelosTelefonos
             // 

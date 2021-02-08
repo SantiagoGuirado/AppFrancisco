@@ -35,6 +35,15 @@ namespace AppFrancisco.Controlador
             return _bandera;
         }
 
+        public Boolean verMarcasTelefonos()
+        {
+            _conexion.establecerConexion();
+            _consultasSelect.carcarConsultaSQL(2);
+            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
+            _dataSet = _consultasSelect._dataSet;
+            return _bandera;
+        }
+
 
         //Setters && Getters
         internal Conexion _conexion { get => conexion; set => conexion = value; }

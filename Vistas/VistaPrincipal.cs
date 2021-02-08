@@ -38,6 +38,19 @@ namespace AppFrancisco
             }
         }
 
+        private void menuVerMarcasTelefonos_Click(object sender, EventArgs e)
+        {
+            if (_controladorBaseDeDatos.verMarcasTelefonos())
+            {
+                dataSet = _controladorBaseDeDatos._dataSet;
+                dataGridView1.DataSource = dataSet.Tables[0];
+            }
+            else
+            {
+                _errorConexionDataBase1.ShowDialog(this);
+            }
+        }
+
         //Setters && Getters
         public ControladorBaseDeDatos _controladorBaseDeDatos { get => controladorBaseDeDatos; set => controladorBaseDeDatos = value; }
         public ErrorConexionBaseDeDatos _errorConexionDataBase1 { get => ErrorConexionDataBase; set => ErrorConexionDataBase = value; }

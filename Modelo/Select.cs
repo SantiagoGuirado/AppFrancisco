@@ -30,15 +30,18 @@ namespace AppFrancisco.Modelo
                 case 1:
                     _consultaSQL = "SELECT * FROM Cliente";
                     break;
+                case 2:
+                    _consultaSQL = "SELECT * FROM MarcasTelefonos;";
+                    break;
             }
         }
 
         public Boolean realizarConsulta(SQLiteConnection conexion)
         {
             Boolean bandera = true;
-
             try
             {
+                _dataSet.Tables.Clear();
                 conexion.Open();
                 _adaptador = new SQLiteDataAdapter(_consultaSQL, conexion);
                 _adaptador.Fill(_dataSet);
