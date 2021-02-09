@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using AppFrancisco.Controlador;
+using AppFrancisco.Vistas;
 
 namespace AppFrancisco
 {
@@ -10,7 +11,8 @@ namespace AppFrancisco
         //Atributos
         ControladorBaseDeDatos controladorBaseDeDatos;
         DataSet dataSet;
-        ErrorConexionBaseDeDatos ErrorConexionDataBase;
+        ErrorConexionBaseDeDatos errorConexionDataBase;
+        ElegirMarca elegirMarca;
 
         public Form1()
         {
@@ -23,6 +25,7 @@ namespace AppFrancisco
         {
             _controladorBaseDeDatos = new ControladorBaseDeDatos();
             _errorConexionDataBase1 = new ErrorConexionBaseDeDatos();
+            _elegirMarca = new ElegirMarca();
         }
 
         private void menuVerClientes_Click(object sender, EventArgs e)
@@ -51,8 +54,14 @@ namespace AppFrancisco
             }
         }
 
+        private void menuVerModelosTelefonos_Click(object sender, EventArgs e)
+        {
+            _elegirMarca.ShowDialog(this);
+        }
+
         //Setters && Getters
         public ControladorBaseDeDatos _controladorBaseDeDatos { get => controladorBaseDeDatos; set => controladorBaseDeDatos = value; }
-        public ErrorConexionBaseDeDatos _errorConexionDataBase1 { get => ErrorConexionDataBase; set => ErrorConexionDataBase = value; }
+        public ErrorConexionBaseDeDatos _errorConexionDataBase1 { get => errorConexionDataBase; set => errorConexionDataBase = value; }
+        public ElegirMarca _elegirMarca { get => elegirMarca; set => elegirMarca = value; }
     }
 }
