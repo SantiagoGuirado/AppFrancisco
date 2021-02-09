@@ -18,3 +18,4 @@ C:\Users\santi\source\repos\AppFrancisco\obj\Debug\AppFrancisco.csproj.CoreCompi
 C:\Users\santi\source\repos\AppFrancisco\obj\Debug\AppFrancisco.csproj.CopyComplete
 C:\Users\santi\source\repos\AppFrancisco\obj\Debug\AppFrancisco.exe
 C:\Users\santi\source\repos\AppFrancisco\obj\Debug\AppFrancisco.pdb
+C:\Users\santi\source\repos\AppFrancisco\obj\Debug\AppFrancisco.Vistas.ElegirMarca.resources

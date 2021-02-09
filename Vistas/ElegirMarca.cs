@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppFrancisco.Vistas
@@ -18,11 +12,17 @@ namespace AppFrancisco.Vistas
             InitializeComponent();
         }
 
+        //Metodos
+        public void cargarComboBox(DataTable marcas)
+        {
+            cbMarcasCelulares.DataSource = marcas;
+            cbMarcasCelulares.ValueMember = "IdMarca";
+            cbMarcasCelulares.DisplayMember = "NombreMarca";
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        //Metodos       
     }
 }

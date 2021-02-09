@@ -56,7 +56,15 @@ namespace AppFrancisco
 
         private void menuVerModelosTelefonos_Click(object sender, EventArgs e)
         {
-            
+            if (_controladorBaseDeDatos.cargarComboBoxMarcas())
+            {
+                _elegirMarca.cargarComboBox(_controladorBaseDeDatos._dataTable);
+                _elegirMarca.ShowDialog(this);
+            }
+            else
+            {
+                _errorConexionDataBase1.ShowDialog(this);
+            }
         }
 
         //Setters && Getters
