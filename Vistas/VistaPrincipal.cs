@@ -10,7 +10,7 @@ namespace AppFrancisco
     {
         //Atributos
         ControladorBaseDeDatos controladorBaseDeDatos;
-        DataSet dataSet;
+        DataTable dataTable;
         ErrorConexionBaseDeDatos errorConexionDataBase;
         ElegirMarca elegirMarca;
 
@@ -32,8 +32,8 @@ namespace AppFrancisco
         {
             if (_controladorBaseDeDatos.verClientes())
             {
-                dataSet = _controladorBaseDeDatos._dataSet;
-                dataGridView1.DataSource = dataSet.Tables[0];
+                _dataTable = _controladorBaseDeDatos._dataTable;
+                dataGridView1.DataSource = _dataTable;
             }
             else
             {
@@ -45,8 +45,8 @@ namespace AppFrancisco
         {
             if (_controladorBaseDeDatos.verMarcasTelefonos())
             {
-                dataSet = _controladorBaseDeDatos._dataSet;
-                dataGridView1.DataSource = dataSet.Tables[0];
+                _dataTable = _controladorBaseDeDatos._dataTable;
+                dataGridView1.DataSource = _dataTable;
             }
             else
             {
@@ -56,12 +56,13 @@ namespace AppFrancisco
 
         private void menuVerModelosTelefonos_Click(object sender, EventArgs e)
         {
-            _elegirMarca.ShowDialog(this);
+            
         }
 
         //Setters && Getters
         public ControladorBaseDeDatos _controladorBaseDeDatos { get => controladorBaseDeDatos; set => controladorBaseDeDatos = value; }
         public ErrorConexionBaseDeDatos _errorConexionDataBase1 { get => errorConexionDataBase; set => errorConexionDataBase = value; }
         public ElegirMarca _elegirMarca { get => elegirMarca; set => elegirMarca = value; }
+        public DataTable _dataTable { get => dataTable; set => dataTable = value; }
     }
 }

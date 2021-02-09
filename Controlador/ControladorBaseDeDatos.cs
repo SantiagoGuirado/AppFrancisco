@@ -7,7 +7,7 @@ namespace AppFrancisco.Controlador
     public class ControladorBaseDeDatos
     {
         //Atributos
-        private DataSet dataSet;
+        private DataTable dataTable;
         private Boolean bandera;
 
         private Conexion conexion;
@@ -31,7 +31,7 @@ namespace AppFrancisco.Controlador
             _conexion.establecerConexion();
             _consultasSelect.carcarConsultaSQL(1);
             _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
-            _dataSet = _consultasSelect._dataSet;
+            _dataTable = _consultasSelect._dataTable;
             return _bandera;
         }
 
@@ -40,14 +40,23 @@ namespace AppFrancisco.Controlador
             _conexion.establecerConexion();
             _consultasSelect.carcarConsultaSQL(2);
             _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
-            _dataSet = _consultasSelect._dataSet;
+            _dataTable = _consultasSelect._dataTable;
+            return _bandera;
+        }
+
+        public Boolean cargarComboBoxMarcas()
+        {
+            _conexion.establecerConexion();
+            _consultasSelect.carcarConsultaSQL(3);
+            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
+            _dataTable = _consultasSelect._dataTable;
             return _bandera;
         }
 
 
         //Setters && Getters
         internal Conexion _conexion { get => conexion; set => conexion = value; }
-        public DataSet _dataSet { get => dataSet; set => dataSet = value; }
+        public DataTable _dataTable { get => dataTable; set => dataTable = value; }
         public Select _consultasSelect { get => consultasSelect; set => consultasSelect = value; }
         public bool _bandera { get => bandera; set => bandera = value; }
     }

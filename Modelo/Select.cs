@@ -9,7 +9,7 @@ namespace AppFrancisco.Modelo
         //Atributos
         private string consultaSQL;
         private SQLiteDataAdapter adaptador;
-        private DataSet dataSet;
+        private DataTable dataTable;
 
         //Constructor
         public Select()
@@ -20,7 +20,7 @@ namespace AppFrancisco.Modelo
         //Metodos
         public void implementarElementos()
         {
-            _dataSet = new DataSet();
+            _dataTable = new DataTable();
         }
 
         public void carcarConsultaSQL(int opcion)
@@ -33,6 +33,9 @@ namespace AppFrancisco.Modelo
                 case 2:
                     _consultaSQL = "SELECT * FROM MarcasTelefonos;";
                     break;
+                case 3:
+                    _consultaSQL = "SELECT IdMarca, NombreMarca FROM MarcasTelefonos;";
+                    break;
             }
         }
 
@@ -41,10 +44,11 @@ namespace AppFrancisco.Modelo
             Boolean bandera = true;
             try
             {
-                _dataSet.Tables.Clear();
+                _dataTable.Rows.Clear();
+                _dataTable.Columns.Clear();
                 conexion.Open();
                 _adaptador = new SQLiteDataAdapter(_consultaSQL, conexion);
-                _adaptador.Fill(_dataSet);
+                _adaptador.Fill(_dataTable);
                 conexion.Close();
             }
             catch (SQLiteException e)
@@ -58,6 +62,6 @@ namespace AppFrancisco.Modelo
         //Setters && Getters
         public string _consultaSQL { get => consultaSQL; set => consultaSQL = value; }
         public SQLiteDataAdapter _adaptador { get => adaptador; set => adaptador = value; }
-        public DataSet _dataSet { get => dataSet; set => dataSet = value; }
+        public DataTable _dataTable { get => dataTable; set => dataTable = value; }
     }
 }
