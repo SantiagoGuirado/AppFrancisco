@@ -24,45 +24,34 @@ namespace AppFrancisco.Controlador
         {
             _conexion = new Conexion();
             _consultasSelect = new Select();
+            _dataTable = _consultasSelect._dataTable;
+        }
+
+        public void realizarConsulta(int numeroConsulta)
+        {
+            _conexion.establecerConexion();
+            _consultasSelect.carcarConsultaSQL(numeroConsulta);
+            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
         }
 
         public Boolean verClientes()
         {
-            _conexion.establecerConexion();
-            _consultasSelect.carcarConsultaSQL(1);
-            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
-            _dataTable = _consultasSelect._dataTable;
+            realizarConsulta(1);
             return _bandera;
         }
 
         public Boolean verMarcasTelefonos()
         {
-            _conexion.establecerConexion();
-            _consultasSelect.carcarConsultaSQL(2);
-            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
-            _dataTable = _consultasSelect._dataTable;
-            return _bandera;
-        }
-
-        public Boolean cargarComboBoxMarcas()
-        {
-            _conexion.establecerConexion();
-            _consultasSelect.carcarConsultaSQL(2);
-            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
-            _dataTable = _consultasSelect._dataTable;
+            realizarConsulta(2);
             return _bandera;
         }
 
         public Boolean cargarModelosTelefonos(int marcaSeleccionada)
         {
-            _conexion.establecerConexion();
             _consultasSelect._idMarca = marcaSeleccionada;
-            _consultasSelect.carcarConsultaSQL(3);
-            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
-            _dataTable = _consultasSelect._dataTable;
+            realizarConsulta(3);
             return _bandera;
         }
-
 
         //Setters && Getters
         internal Conexion _conexion { get => conexion; set => conexion = value; }

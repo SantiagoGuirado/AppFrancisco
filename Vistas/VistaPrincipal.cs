@@ -26,16 +26,13 @@ namespace AppFrancisco
             _controladorBaseDeDatos = new ControladorBaseDeDatos();
             _errorConexionDataBase1 = new ErrorConexionBaseDeDatos();
             _elegirMarca = new ElegirMarca();
+            _dataTable = _controladorBaseDeDatos._dataTable;
+            dataGridView1.DataSource = _dataTable;
         }
 
         private void menuVerClientes_Click(object sender, EventArgs e)
         {
-            if (_controladorBaseDeDatos.verClientes())
-            {
-                _dataTable = _controladorBaseDeDatos._dataTable;
-                dataGridView1.DataSource = _dataTable;
-            }
-            else
+            if (!_controladorBaseDeDatos.verClientes())
             {
                 _errorConexionDataBase1.ShowDialog(this);
             }
@@ -43,12 +40,7 @@ namespace AppFrancisco
 
         private void menuVerMarcasTelefonos_Click(object sender, EventArgs e)
         {
-            if (_controladorBaseDeDatos.verMarcasTelefonos())
-            {
-                _dataTable = _controladorBaseDeDatos._dataTable;
-                dataGridView1.DataSource = _dataTable;
-            }
-            else
+            if (!_controladorBaseDeDatos.verMarcasTelefonos())
             {
                 _errorConexionDataBase1.ShowDialog(this);
             }
@@ -56,18 +48,12 @@ namespace AppFrancisco
 
         private void menuVerModelosTelefonos_Click(object sender, EventArgs e)
         {
-            if (_controladorBaseDeDatos.cargarComboBoxMarcas())
+            if (_controladorBaseDeDatos.verMarcasTelefonos())
             {
                 _elegirMarca._dataTable = _controladorBaseDeDatos._dataTable;
                 _elegirMarca.cargarComboBox();
                 _elegirMarca.ShowDialog(this);
-                if (_controladorBaseDeDatos.cargarModelosTelefonos(_elegirMarca._marcaSeleccionada))
-                {
-                    _dataTable = _controladorBaseDeDatos._dataTable;
-                    dataGridView1.DataSource = _dataTable;
-                    
-                }
-                else
+                if (!_controladorBaseDeDatos.cargarModelosTelefonos(_elegirMarca._marcaSeleccionada))
                 {
                     _errorConexionDataBase1.ShowDialog(this);
                 }
