@@ -6,6 +6,10 @@ namespace AppFrancisco.Vistas
 {
     public partial class ElegirMarca : Form
     {
+        //Atributos
+        private Boolean bandera;
+        private int marcaSeleccionada;
+
         //Constructor
         public ElegirMarca()
         {
@@ -24,5 +28,17 @@ namespace AppFrancisco.Vistas
         {
             this.Close();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            _bandera = true;
+            _marcaSeleccionada = Convert.ToInt32(cbMarcasCelulares.SelectedIndex.ToString());
+            this.Close();
+        }
+
+        //Setters && Getters
+        public bool _bandera { get => bandera; set => bandera = value; }
+        public int _marcaSeleccionada { get => marcaSeleccionada; set => marcaSeleccionada = value; }
+
     }
 }
