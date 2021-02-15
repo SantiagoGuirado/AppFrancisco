@@ -7,6 +7,7 @@ namespace AppFrancisco.Vistas
     public partial class ElegirMarca : Form
     {
         //Atributos
+        private DataTable dataTable;
         private Boolean bandera;
         private int marcaSeleccionada;
 
@@ -17,10 +18,10 @@ namespace AppFrancisco.Vistas
         }
 
         //Metodos
-        public void cargarComboBox(DataTable marcas)
+        public void cargarComboBox()
         {
             _bandera = false;
-            cbMarcasCelulares.DataSource = marcas;
+            cbMarcasCelulares.DataSource = _dataTable;
             cbMarcasCelulares.ValueMember = "IdMarca";
             cbMarcasCelulares.DisplayMember = "NombreMarca";
         }
@@ -33,12 +34,13 @@ namespace AppFrancisco.Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             _bandera = true;
-            _marcaSeleccionada = Convert.ToInt32(cbMarcasCelulares.SelectedIndex.ToString());
+            _marcaSeleccionada = Convert.ToInt32(cbMarcasCelulares.SelectedIndex.ToString()) + 1;
             this.Close();
         }
 
         //Setters && Getters
         public bool _bandera { get => bandera; set => bandera = value; }
         public int _marcaSeleccionada { get => marcaSeleccionada; set => marcaSeleccionada = value; }
+        public DataTable _dataTable { get => dataTable; set => dataTable = value; }
     }
 }

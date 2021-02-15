@@ -58,8 +58,19 @@ namespace AppFrancisco
         {
             if (_controladorBaseDeDatos.cargarComboBoxMarcas())
             {
-                _elegirMarca.cargarComboBox(_controladorBaseDeDatos._dataTable);
+                _elegirMarca._dataTable = _controladorBaseDeDatos._dataTable;
+                _elegirMarca.cargarComboBox();
                 _elegirMarca.ShowDialog(this);
+                if (_controladorBaseDeDatos.cargarModelosTelefonos(_elegirMarca._marcaSeleccionada))
+                {
+                    _dataTable = _controladorBaseDeDatos._dataTable;
+                    dataGridView1.DataSource = _dataTable;
+                    
+                }
+                else
+                {
+                    _errorConexionDataBase1.ShowDialog(this);
+                }
             }
             else
             {

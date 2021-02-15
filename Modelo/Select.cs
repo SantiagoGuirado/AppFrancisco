@@ -10,6 +10,7 @@ namespace AppFrancisco.Modelo
         private string consultaSQL;
         private SQLiteDataAdapter adaptador;
         private DataTable dataTable;
+        private int idMarca;
 
         //Constructor
         public Select()
@@ -34,7 +35,10 @@ namespace AppFrancisco.Modelo
                     _consultaSQL = "SELECT * FROM MarcasTelefonos;";
                     break;
                 case 3:
-                    _consultaSQL = "SELECT IdMarca, NombreMarca FROM MarcasTelefonos;";
+                    _consultaSQL = "SELECT Telefono.IdTelefono, MarcasTelefonos.NombreMarca, " +
+                        "Telefono.Modelo, Telefono.Descripcion FROM Telefono INNER JOIN MarcasTelefonos " +
+                        "ON Telefono.IdMarca = MarcasTelefonos.IdMarca WHERE " +
+                        "MarcasTelefonos.IdMarca = " + _idMarca + ";";
                     break;
             }
         }
@@ -63,5 +67,6 @@ namespace AppFrancisco.Modelo
         public string _consultaSQL { get => consultaSQL; set => consultaSQL = value; }
         public SQLiteDataAdapter _adaptador { get => adaptador; set => adaptador = value; }
         public DataTable _dataTable { get => dataTable; set => dataTable = value; }
+        public int _idMarca { get => idMarca; set => idMarca = value; }
     }
 }

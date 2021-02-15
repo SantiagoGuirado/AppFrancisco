@@ -47,6 +47,16 @@ namespace AppFrancisco.Controlador
         public Boolean cargarComboBoxMarcas()
         {
             _conexion.establecerConexion();
+            _consultasSelect.carcarConsultaSQL(2);
+            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
+            _dataTable = _consultasSelect._dataTable;
+            return _bandera;
+        }
+
+        public Boolean cargarModelosTelefonos(int marcaSeleccionada)
+        {
+            _conexion.establecerConexion();
+            _consultasSelect._idMarca = marcaSeleccionada;
             _consultasSelect.carcarConsultaSQL(3);
             _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
             _dataTable = _consultasSelect._dataTable;
