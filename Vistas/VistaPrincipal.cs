@@ -66,7 +66,10 @@ namespace AppFrancisco
 
         private void menuVerServiciosOfrecidos_Click(object sender, EventArgs e)
         {
-
+            if (!_controladorBaseDeDatos.realizarConsulta(4))
+            {
+                _errorConexionDataBase1.ShowDialog(this);
+            }
         }
 
         //Setters && Getters

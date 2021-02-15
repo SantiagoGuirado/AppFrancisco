@@ -40,6 +40,18 @@ namespace AppFrancisco.Modelo
                         "ON Telefono.IdMarca = MarcasTelefonos.IdMarca WHERE " +
                         "MarcasTelefonos.IdMarca = " + _idMarca + ";";
                     break;
+                case 4:
+                    _consultaSQL = "SELECT * FROM Servicios;";
+                    break;
+                case 5:
+                    _consultaSQL = "SELECT Cliente.Dni, Cliente.Nombre, Servicios.NombreServicio, " +
+                        "MarcasTelefonos.NombreMarca, Telefono.Modelo, TrabajoRealizado.Fecha, " +
+                        "TrabajoRealizado.Precio, TrabajoRealizado.Descripcion FROM TrabajoRealizado " +
+                        "INNER JOIN Cliente ON TrabajoRealizado.Dni = Cliente.Dni INNER JOIN Servicios " +
+                        "ON TrabajoRealizado.IdServicios = Servicios.IdServicio INNER JOIN Telefono ON " +
+                        "TrabajoRealizado.IdTelefono = Telefono.IdTelefono INNER JOIN MarcasTelefonos " +
+                        "ON Telefono.IdMarca = MarcasTelefonos.IdMarca; ";
+                    break;
             }
         }
 
