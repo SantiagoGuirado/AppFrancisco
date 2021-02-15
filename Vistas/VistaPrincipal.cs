@@ -30,20 +30,22 @@ namespace AppFrancisco
             dataGridView1.DataSource = _dataTable;
         }
 
-        private void menuVerClientes_Click(object sender, EventArgs e)
+        public void realizarConsulta(int numeroConsulta)
         {
-            if (!_controladorBaseDeDatos.realizarConsulta(1))
+            if (!_controladorBaseDeDatos.realizarConsulta(numeroConsulta))
             {
                 _errorConexionDataBase1.ShowDialog(this);
             }
         }
 
+        private void menuVerClientes_Click(object sender, EventArgs e)
+        {
+            realizarConsulta(1);
+        }
+
         private void menuVerMarcasTelefonos_Click(object sender, EventArgs e)
         {
-            if (!_controladorBaseDeDatos.realizarConsulta(2))
-            {
-                _errorConexionDataBase1.ShowDialog(this);
-            }
+            realizarConsulta(2);
         }
 
         private void menuVerModelosTelefonos_Click(object sender, EventArgs e)
@@ -66,18 +68,12 @@ namespace AppFrancisco
 
         private void menuVerServiciosOfrecidos_Click(object sender, EventArgs e)
         {
-            if (!_controladorBaseDeDatos.realizarConsulta(4))
-            {
-                _errorConexionDataBase1.ShowDialog(this);
-            }
+            realizarConsulta(4);
         }
 
         private void menuVerTrabajosRealizados_Click(object sender, EventArgs e)
         {
-            if (!_controladorBaseDeDatos.realizarConsulta(5))
-            {
-                _errorConexionDataBase1.ShowDialog(this);
-            }
+            realizarConsulta(5);
         }
 
         //Setters && Getters
