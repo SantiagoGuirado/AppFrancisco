@@ -107,6 +107,7 @@ namespace AppFrancisco
             this.menuVerTrabajosRealizados.Name = "menuVerTrabajosRealizados";
             this.menuVerTrabajosRealizados.Size = new System.Drawing.Size(189, 22);
             this.menuVerTrabajosRealizados.Text = "Trabajos Realizados";
+            this.menuVerTrabajosRealizados.Click += new System.EventHandler(this.menuVerTrabajosRealizados_Click);
             // 
             // menuAgregar
             // 

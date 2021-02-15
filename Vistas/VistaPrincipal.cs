@@ -72,6 +72,14 @@ namespace AppFrancisco
             }
         }
 
+        private void menuVerTrabajosRealizados_Click(object sender, EventArgs e)
+        {
+            if (!_controladorBaseDeDatos.realizarConsulta(5))
+            {
+                _errorConexionDataBase1.ShowDialog(this);
+            }
+        }
+
         //Setters && Getters
         public ControladorBaseDeDatos _controladorBaseDeDatos { get => controladorBaseDeDatos; set => controladorBaseDeDatos = value; }
         public ErrorConexionBaseDeDatos _errorConexionDataBase1 { get => errorConexionDataBase; set => errorConexionDataBase = value; }
