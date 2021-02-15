@@ -27,29 +27,20 @@ namespace AppFrancisco.Controlador
             _dataTable = _consultasSelect._dataTable;
         }
 
-        public void realizarConsulta(int numeroConsulta)
+        public Boolean realizarConsulta(int numeroConsulta)
         {
             _conexion.establecerConexion();
             _consultasSelect.carcarConsultaSQL(numeroConsulta);
             _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
-        }
-
-        public Boolean verClientes()
-        {
-            realizarConsulta(1);
             return _bandera;
         }
 
-        public Boolean verMarcasTelefonos()
+        public Boolean realizarConsulta(int numeroConsulta, int marcaSeleccionada)
         {
-            realizarConsulta(2);
-            return _bandera;
-        }
-
-        public Boolean cargarModelosTelefonos(int marcaSeleccionada)
-        {
+            _conexion.establecerConexion();
             _consultasSelect._idMarca = marcaSeleccionada;
-            realizarConsulta(3);
+            _consultasSelect.carcarConsultaSQL(numeroConsulta);
+            _bandera = _consultasSelect.realizarConsulta(_conexion._conexion);
             return _bandera;
         }
 

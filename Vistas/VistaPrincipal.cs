@@ -32,7 +32,7 @@ namespace AppFrancisco
 
         private void menuVerClientes_Click(object sender, EventArgs e)
         {
-            if (!_controladorBaseDeDatos.verClientes())
+            if (!_controladorBaseDeDatos.realizarConsulta(1))
             {
                 _errorConexionDataBase1.ShowDialog(this);
             }
@@ -40,7 +40,7 @@ namespace AppFrancisco
 
         private void menuVerMarcasTelefonos_Click(object sender, EventArgs e)
         {
-            if (!_controladorBaseDeDatos.verMarcasTelefonos())
+            if (!_controladorBaseDeDatos.realizarConsulta(2))
             {
                 _errorConexionDataBase1.ShowDialog(this);
             }
@@ -48,12 +48,12 @@ namespace AppFrancisco
 
         private void menuVerModelosTelefonos_Click(object sender, EventArgs e)
         {
-            if (_controladorBaseDeDatos.verMarcasTelefonos())
+            if (_controladorBaseDeDatos.realizarConsulta(2))
             {
                 _elegirMarca._dataTable = _controladorBaseDeDatos._dataTable;
                 _elegirMarca.cargarComboBox();
                 _elegirMarca.ShowDialog(this);
-                if (!_controladorBaseDeDatos.cargarModelosTelefonos(_elegirMarca._marcaSeleccionada))
+                if (!_controladorBaseDeDatos.realizarConsulta(3, _elegirMarca._marcaSeleccionada))
                 {
                     _errorConexionDataBase1.ShowDialog(this);
                 }
@@ -62,6 +62,11 @@ namespace AppFrancisco
             {
                 _errorConexionDataBase1.ShowDialog(this);
             }
+        }
+
+        private void menuVerServiciosOfrecidos_Click(object sender, EventArgs e)
+        {
+
         }
 
         //Setters && Getters

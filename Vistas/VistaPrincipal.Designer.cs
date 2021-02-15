@@ -100,6 +100,7 @@ namespace AppFrancisco
             this.menuVerServiciosOfrecidos.Name = "menuVerServiciosOfrecidos";
             this.menuVerServiciosOfrecidos.Size = new System.Drawing.Size(189, 22);
             this.menuVerServiciosOfrecidos.Text = "Servicios Ofrecidos";
+            this.menuVerServiciosOfrecidos.Click += new System.EventHandler(this.menuVerServiciosOfrecidos_Click);
             // 
             // menuVerTrabajosRealizados
             // 
