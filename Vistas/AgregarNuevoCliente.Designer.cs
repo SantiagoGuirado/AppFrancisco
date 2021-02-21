@@ -44,7 +44,7 @@ namespace AppFrancisco.Vistas
             // 
             this.lbTittle.AutoSize = true;
             this.lbTittle.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTittle.Location = new System.Drawing.Point(26, 19);
+            this.lbTittle.Location = new System.Drawing.Point(44, 24);
             this.lbTittle.Name = "lbTittle";
             this.lbTittle.Size = new System.Drawing.Size(216, 15);
             this.lbTittle.TabIndex = 0;
@@ -52,15 +52,16 @@ namespace AppFrancisco.Vistas
             // 
             // tbDNI
             // 
-            this.tbDNI.Location = new System.Drawing.Point(90, 67);
+            this.tbDNI.Location = new System.Drawing.Point(124, 67);
             this.tbDNI.MaxLength = 10;
             this.tbDNI.Name = "tbDNI";
             this.tbDNI.Size = new System.Drawing.Size(152, 20);
             this.tbDNI.TabIndex = 1;
+            this.tbDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDNI_KeyPress);
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(90, 102);
+            this.tbNombre.Location = new System.Drawing.Point(124, 102);
             this.tbNombre.MaxLength = 150;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(152, 20);
@@ -68,11 +69,12 @@ namespace AppFrancisco.Vistas
             // 
             // tbTelefono
             // 
-            this.tbTelefono.Location = new System.Drawing.Point(90, 139);
+            this.tbTelefono.Location = new System.Drawing.Point(124, 139);
             this.tbTelefono.MaxLength = 20;
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(152, 20);
             this.tbTelefono.TabIndex = 3;
+            this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // lbDNI
             // 
@@ -97,33 +99,35 @@ namespace AppFrancisco.Vistas
             this.lbTelefono.AutoSize = true;
             this.lbTelefono.Location = new System.Drawing.Point(26, 142);
             this.lbTelefono.Name = "lbTelefono";
-            this.lbTelefono.Size = new System.Drawing.Size(52, 13);
+            this.lbTelefono.Size = new System.Drawing.Size(92, 13);
             this.lbTelefono.TabIndex = 6;
-            this.lbTelefono.Text = "Telefono:";
+            this.lbTelefono.Text = "Num de Telefono:";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(32, 182);
+            this.btnCancelar.Location = new System.Drawing.Point(29, 182);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(167, 182);
+            this.btnGuardar.Location = new System.Drawing.Point(201, 182);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // AgregarNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 226);
+            this.ClientSize = new System.Drawing.Size(296, 226);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lbTelefono);
