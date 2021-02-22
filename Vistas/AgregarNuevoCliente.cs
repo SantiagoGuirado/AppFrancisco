@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppFrancisco.Vistas
@@ -15,7 +8,7 @@ namespace AppFrancisco.Vistas
         //Atributos
         private int dni;
         private String nombre;
-        private int telefono;
+        private Int64 telefono;
 
         //Constructor
         public AgregarNuevoCliente()
@@ -49,13 +42,13 @@ namespace AppFrancisco.Vistas
         {
             _dni = Convert.ToInt32(tbDNI.Text.ToString());
             _nombre = tbNombre.Text.ToString();
-            _telefono = Convert.ToInt32(tbTelefono.Text.ToString());
+            _telefono = Convert.ToInt64(tbTelefono.Text.ToString());
             this.Close();
         }
 
         //Setters && Getters
         public int _dni { get => dni; set => dni = value; }
         public string _nombre { get => nombre; set => nombre = value; }
-        public int _telefono { get => telefono; set => telefono = value; }
+        public Int64 _telefono { get => telefono; set => telefono = value; }
     }
 }

@@ -42,7 +42,7 @@ namespace AppFrancisco
             }
         }
 
-        public void realizarConsultaInsert(int dni, String nombre, int numTelefono)
+        public void realizarConsultaInsert(int dni, String nombre, Int64 numTelefono)
         {
             if (!_controladorBaseDeDatos.realizarConsultaInsert(dni, nombre, numTelefono))
             {

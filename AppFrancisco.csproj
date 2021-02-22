@@ -66,7 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\ControladorBaseDeDatos.cs" />
+    <Compile Include="Modelo\Insert.cs" />
     <Compile Include="Modelo\Select.cs" />
+    <Compile Include="Vistas\AgregarNuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AgregarNuevoCliente.Designer.cs">
+      <DependentUpon>AgregarNuevoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\ElegirMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +95,9 @@
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vistas\AgregarNuevoCliente.resx">
+      <DependentUpon>AgregarNuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ElegirMarca.resx">
       <DependentUpon>ElegirMarca.cs</DependentUpon>
     </EmbeddedResource>
