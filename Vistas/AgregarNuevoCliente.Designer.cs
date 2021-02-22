@@ -70,7 +70,7 @@ namespace AppFrancisco.Vistas
             // tbTelefono
             // 
             this.tbTelefono.Location = new System.Drawing.Point(124, 139);
-            this.tbTelefono.MaxLength = 20;
+            this.tbTelefono.MaxLength = 10;
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(152, 20);
             this.tbTelefono.TabIndex = 3;
