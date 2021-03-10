@@ -93,9 +93,11 @@ namespace AppFrancisco
         private void menuAgregarNuevoCliente_Click(object sender, EventArgs e)
         {
             _agregarNuevoCliente.ShowDialog(this);
-            realizarConsultaInsert(_agregarNuevoCliente._dni, _agregarNuevoCliente._nombre,
+            if (_agregarNuevoCliente._bandera)
+            {
+                realizarConsultaInsert(_agregarNuevoCliente._dni, _agregarNuevoCliente._nombre,
                 _agregarNuevoCliente._telefono);
-
+            }
         }
 
         //Setters && Getters

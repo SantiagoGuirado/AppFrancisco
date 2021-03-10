@@ -9,6 +9,7 @@ namespace AppFrancisco.Vistas
         private int dni;
         private String nombre;
         private Int64 telefono;
+        private Boolean bandera = false;
 
         //Constructor
         public AgregarNuevoCliente()
@@ -35,6 +36,7 @@ namespace AppFrancisco.Vistas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            _bandera = false;
             this.Close();
         }
 
@@ -43,6 +45,7 @@ namespace AppFrancisco.Vistas
             _dni = Convert.ToInt32(tbDNI.Text.ToString());
             _nombre = tbNombre.Text.ToString();
             _telefono = Convert.ToInt64(tbTelefono.Text.ToString());
+            _bandera = true;
             this.Close();
         }
 
@@ -50,5 +53,6 @@ namespace AppFrancisco.Vistas
         public int _dni { get => dni; set => dni = value; }
         public string _nombre { get => nombre; set => nombre = value; }
         public Int64 _telefono { get => telefono; set => telefono = value; }
+        public bool _bandera { get => bandera; set => bandera = value; }
     }
 }
