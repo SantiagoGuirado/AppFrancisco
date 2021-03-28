@@ -9,7 +9,7 @@ namespace AppFrancisco.Vistas
         private int dni;
         private String nombre;
         private Int64 telefono;
-        private Boolean bandera = false;
+        private Boolean bandera;
 
         //Constructor
         public AgregarNuevoCliente()
@@ -36,7 +36,6 @@ namespace AppFrancisco.Vistas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            _bandera = false;
             this.Close();
         }
 

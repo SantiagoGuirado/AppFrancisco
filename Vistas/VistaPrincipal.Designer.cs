@@ -133,6 +133,7 @@ namespace AppFrancisco
             this.menuAgregarNuevaMarcaTelefono.Name = "menuAgregarNuevaMarcaTelefono";
             this.menuAgregarNuevaMarcaTelefono.Size = new System.Drawing.Size(217, 22);
             this.menuAgregarNuevaMarcaTelefono.Text = "Nueva Marca de Telefono";
+            this.menuAgregarNuevaMarcaTelefono.Click += new System.EventHandler(this.menuAgregarNuevaMarcaTelefono_Click);
             // 
             // menuAgregarNuevoModeloTelefono
             // 

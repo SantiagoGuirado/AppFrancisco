@@ -92,12 +92,18 @@ namespace AppFrancisco
         //Eventos que utilizan consultas INSERT INTO
         private void menuAgregarNuevoCliente_Click(object sender, EventArgs e)
         {
+            _agregarNuevoCliente._bandera = false;
             _agregarNuevoCliente.ShowDialog(this);
             if (_agregarNuevoCliente._bandera)
             {
                 realizarConsultaInsert(_agregarNuevoCliente._dni, _agregarNuevoCliente._nombre,
                 _agregarNuevoCliente._telefono);
             }
+        }
+
+        private void menuAgregarNuevaMarcaTelefono_Click(object sender, EventArgs e)
+        {
+
         }
 
         //Setters && Getters
